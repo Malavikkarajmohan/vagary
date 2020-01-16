@@ -30,6 +30,30 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAvCyfNNOtAa8-vcUxT-TKgdrUVMVFs9iQ",
+    authDomain: "vagary-40617.firebaseapp.com",
+    databaseURL: "https://vagary-40617.firebaseio.com",
+    projectId: "vagary-40617",
+    storageBucket: "vagary-40617.appspot.com",
+    messagingSenderId: "111708401313",
+    appId: "1:111708401313:web:58bf0a4f48cb5cc3558ae0",
+    measurementId: "G-P8SGXXF3DH"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
 <body>
    <!--::header part start::-->
    <header class="main_menu">
