@@ -2,34 +2,35 @@ from flask import Flask, render_template, jsonify, request, abort
 import json
 from pymongo import MongoClient
 
-# class RegistrationForm(Form):
-#     username = TextField('Username', [validators.Length(min=4, max=20)])
-#     email = TextField('Email Address', [validators.Length(min=6, max=50)])
-#     password = PasswordField('New Password', [
-#         validators.Required(),
-#         validators.EqualTo('confirm', message='Passwords must match')
-#     ])
-#     confirm = PasswordField('Repeat Password')
-#     accept_tos = BooleanField('I accept the Terms of Service and Privacy Notice (updated Jan 22, 2015)', [validators.Required()])
-    
-
-
 app = Flask(__name__)
 
 @app.route("/", methods = ['GET','POST'])
 def sign_up():
-    # try:
-    #     form = RegistrationForm(request.form)
-
-    #     if(request.method = "POST" and form.validate()):
-    #         username = form.username.data
-    #         email = form.email.data
-    #         password = form.password.data
-    #         connection = MongoClient()
-    #         db = connection['vagary']
-    #         collection = db['users']
     return render_template("sign_up.html")
-            
+
+@app.route("/register", methods = ['POST'])
+def register():
+    client = MongoClient()
+    content = request.get_json()
+    myclient = client.vagary.users
+    exists = myclient.find_one(content)
+    if exists:
+        return abort(500)
+    else:
+        x = myclient.insert_one(content)
+        return render_template('/home')
+
+@app.route("/check_login", methods = ['GET'])
+def check():
+    client = MongoClient()
+    content = request.get_json()
+    myclient = client.vagary.users
+    exists = myclient.find_one(content)
+    if not exists:
+        return abort(500)
+    else:
+       return render_template('/home')
+    
 
 @app.route("/login")
 def login():
