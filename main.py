@@ -10,8 +10,10 @@ def sign_up():
 
 @app.route("/register", methods = ['POST'])
 def register():
+    
     client = MongoClient()
-    content = request.get_json()
+    content = request.get_data()
+    print(content)
     myclient = client.vagary.users
     exists = myclient.find_one(content)
     if exists:

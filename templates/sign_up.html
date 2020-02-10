@@ -26,6 +26,8 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/signupmain.css') }}">
 <!--===============================================================================================-->
+
+<script src="{{ url_for('static', filename='signup.js') }}"></script>
 </head>
 <body>
 	
@@ -77,7 +79,7 @@
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="container-login100-form-btn m-t-17">
+					<div class="container-login100-form-btn m-t-17" id="btn">
 						<button class="login100-form-btn">
 							Sign Up
 						</button>
@@ -115,7 +117,7 @@
 <!--===============================================================================================-->
 	<script src="{{ url_for('static', filename='css/countdowntime/countdowntime.js') }}"></script>
 <!--===============================================================================================-->
-	<script src="{{ url_for('static', filename='main.js') }}"></script>
+
 
 </body>
 </html>
