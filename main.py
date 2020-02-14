@@ -10,26 +10,35 @@ def sign_up():
 
 @app.route("/register", methods = ['POST'])
 def register():
+    
     client = MongoClient()
-    content = request.get_json()
+    if(request.form['pass'] != request.form['passvalid']):
+        return render_template('sign_up.html')
+    content = {
+        "username" : request.form['username'],
+        "pass" : request.form['pass']
+    }
+    print(content)
     myclient = client.vagary.users
     exists = myclient.find_one(content)
     if exists:
         return abort(500)
     else:
         x = myclient.insert_one(content)
-        return render_template('/home')
+        return render_template('index.html')
 
-@app.route("/check_login", methods = ['GET'])
+@app.route("/check_login", methods = ['POST'])
 def check():
     client = MongoClient()
-    content = request.get_json()
+    content = {
+
+    }
     myclient = client.vagary.users
     exists = myclient.find_one(content)
     if not exists:
         return abort(500)
     else:
-       return render_template('/home')
+       return render_template('index.html')
     
 
 @app.route("/login")
