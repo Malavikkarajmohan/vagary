@@ -27,14 +27,18 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/signupmain.css') }}">
 <!--===============================================================================================-->
 
-<script src="{{ url_for('static', filename='signup.js') }}"></script>
+<!-- <script src="{{ url_for('static', filename='signup.js') }}"></script> -->
+<!-- <script>
+	var signupbtn = document.getElementById("btn");
+	signupbtn.onclick(console.log("dear"));
+</script> -->
 </head>
 <body>
 	
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('static/img/bg-01.jpg') ;">
 			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
-				<form class="login100-form validate-form flex-sb flex-w">
+				<form class="login100-form validate-form flex-sb flex-w" action="/register" method="POST">
 					<span class="login100-form-title p-b-53">
 						Login With
 					</span>
@@ -75,12 +79,12 @@
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" >
+						<input class="input100" type="password" name="passvalid" >
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="container-login100-form-btn m-t-17" id="btn">
-						<button class="login100-form-btn">
+					<div class="container-login100-form-btn m-t-17">
+						<button class="login100-form-btn" onclick="console.log('hello')">
 							Sign Up
 						</button>
 					</div>
@@ -103,19 +107,19 @@
 	<div id="dropDownSelect1"></div>
 	
 <!--===============================================================================================-->
-	<script src="{{ url_for('static', filename='css/jquery/jquery-3.2.1.min.js') }}"></script>
+	<!-- <script src="{{ url_for('static', filename='jquery-3.2.1.min.js') }}"></script> -->
 <!--===============================================================================================-->
-	<script src="{{ url_for('static', filename='css/animsition/js/animsition.min.js') }}"></script>
+	<!-- <script src="{{ url_for('static', filename='animsition.min.js') }}"></script> -->
 <!--===============================================================================================-->
-	<script src="{{ url_for('static', filename='css/bootstrap/js/popper.js') }}"></script>
-	<script src="{{ url_for('static', filename='css/bootstrap/js/bootstrap.min.js') }}"></script>
+	<!-- <script src="{{ url_for('static', filename='popper.js') }}"></script> -->
+	<!-- <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script> -->
 <!--===============================================================================================-->
-	<script src="{{ url_for('static', filename='css/select2/select2.min.js') }}"></script>
+	<!-- <script src="{{ url_for('static', filename='select2.min.js') }}"></script> -->
 <!--===============================================================================================-->
-	<script src="{{ url_for('static', filename='css/daterangepicker/moment.min.js') }}"></script>
-	<script src="{{ url_for('static', filename='css/daterangepicker/daterangepicker.js') }}"></script>
+	<!-- <script src="{{ url_for('static', filename='moment.min.js') }}"></script> -->
+	<!-- <script src="{{ url_for('static', filename='daterangepicker.js') }}"></script> -->
 <!--===============================================================================================-->
-	<script src="{{ url_for('static', filename='css/countdowntime/countdowntime.js') }}"></script>
+	<!-- <script src="{{ url_for('static', filename='countdowntime.js') }}"></script> -->
 <!--===============================================================================================-->
 
 
