@@ -1,7 +1,8 @@
 from flask import Flask, render_template, jsonify, request, abort
 import json
 from pymongo import MongoClient
-from recommend_attractions import model
+from search import findplaces
+# from recommend_attractions import model
 
 app = Flask(__name__)
 
@@ -51,15 +52,12 @@ def home():
     content = request.get_json()
     client = MongoClient()
     recommend_data = client.vagary.purchaseOrders[content.username]
-    predicted_place = model.predict(recommend_data)
+    # predicted_place = model.predict(recommend_data)
     return predicted_place, 200
 
-@app.route('/search', methods = ['POST'])
+@app.route('/search', methods = ['GET','POST'])
 def search():
-    content = request.get_json()
-    client = MongoClient()
-    places = client.vagary.places.find({content})
-    return places, render_template('search.html')
+    return render_template('search.html')
 
 
 @app.route("/about")
