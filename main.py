@@ -6,6 +6,9 @@ from search import findplaces
 
 app = Flask(__name__)
 
+
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+
 @app.route("/", methods = ['GET','POST'])
 def sign_up():
     return render_template("sign_up.html")

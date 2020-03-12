@@ -141,7 +141,6 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="hotel" role="tabpanel" aria-labelledby="hotel-tab">
                                 <div class="booking_form">
-                                    <form method="POST" action="{{ url_for('search') }}">
                                         <div class="form-row">
 
                                             <div class="form_colum" >
@@ -151,7 +150,7 @@
                                                 <input id="datepicker_2" placeholder="Check in date" name = "checkout">
                                             </div>
                                             <div class="form_colum">
-                                                <select class="nc_select" name = "place">
+                                                <select class="nc_select" id = "place">
                                                     <option selected>Choosace place </option>
                                                     <option value="1">One</option>
                                                     <option value="2">Two</option>
@@ -159,16 +158,15 @@
                                                 </select>
                                             </div>
                                             <div class="form_colum">
-                                                <select class="nc_select" name="people">
+                                                <select class="nc_select" id="persons">
                                                     <option selected>Persone </option>
                                                     <option value="1">One</option>
                                                     <option value="2">Two</option>
                                                     <option value="3">Three</option>
                                                 </select>
                                             </div>
-                                            <input type="submit" value="Search" class="btn_1">
+                                            <input type="submit" value="Search" class="btn_1" onclick="search.query()">
                                         </div>
-                                    </form>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="tricket" role="tabpanel" aria-labelledby="tricket-tab">
@@ -345,6 +343,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{{ url_for('static', filename='contact.js')}}"></script>
     <!-- custom js -->
     <script src="{{ url_for('static', filename='custom.js')}}"></script>
+    <script src="{{ url_for('static', filename='search.js')}}"></script>
 </body>
 
 </html>
