@@ -98,10 +98,14 @@ def results():
     content = request.get_json()
     client = MongoClient()
     myclient = client.vagary.places
-    found = myclient.find_one({"persons":content['persons']})
-    return str(found)
-
-
+    found = myclient.find({"persons":content['persons']})
+    data = dict()
+    search = 1
+    for i in found:
+        data[search] = i
+        search +=1 
+    print(type(data))
+    return str(data)
 
 if(__name__ == "__main__"):
     app.run(debug=True)
