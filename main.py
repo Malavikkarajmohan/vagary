@@ -2,9 +2,11 @@ from flask import Flask, render_template, jsonify, request, abort
 import json
 from pymongo import MongoClient
 from search import findplaces
+from flask_cors import CORS
 # from recommend_attractions import model
 
 app = Flask(__name__)
+CORS(app)
 
 
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
@@ -90,6 +92,15 @@ def tour_details():
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
+
+@app.route("/bring_searches", methods = ["POST"])
+def results():
+    content = request.get_json()
+    client = MongoClient()
+    myclient = client.vagary.places
+    found = myclient.find_one({"persons":content['persons']})
+    return str(found)
+
 
 
 if(__name__ == "__main__"):
