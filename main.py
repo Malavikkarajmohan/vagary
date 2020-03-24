@@ -1,51 +1,75 @@
-from flask import Flask, render_template, jsonify, request, abort
+from flask import Flask, render_template, jsonify, request, abort, session, redirect, url_for
 import json
 from pymongo import MongoClient
-from search import findplaces
+from util import findplaces
 from flask_cors import CORS
+from flask_login import LoginManager, UserMixin
+
 # from recommend_attractions import model
 
 app = Flask(__name__)
 CORS(app)
 
+app.secret_key = 'mysecret'
 
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+
 
 @app.route("/", methods = ['GET','POST'])
 def sign_up():
     return render_template("sign_up.html")
 
-@app.route("/register", methods = ['POST'])
+@app.route('/active')
+def active():
+    if 'username' in session:
+        return 'You are logged in as ' + session['username']
+    return redirect(url_for('/'))
+
+@app.route("/register", methods = ['POST', 'GET'])
 def register():
+    if request.method == 'POST':
+        client = MongoClient()
+        if(request.form['pass'] != request.form['passvalid']):
+            return render_template('sign_up.html')
+        content = {
+            "username" : request.form['username'],
+            "pass" : request.form['pass'],
+            "travels" : []
+        }
+        print(content)
+        myclient = client.vagary.users
+        exists = myclient.find_one({'username': content['username']})
+        if exists:
+            return abort(500)
+        else:
+            x = myclient.insert_one(content)
+            session['username'] = request.form['username']
+            return redirect(url_for('index'))
     
-    client = MongoClient()
-    if(request.form['pass'] != request.form['passvalid']):
-        return render_template('sign_up.html')
-    content = {
-        "username" : request.form['username'],
-        "pass" : request.form['pass']
-    }
-    print(content)
-    myclient = client.vagary.users
-    exists = myclient.find_one(content)
-    if exists:
-        return abort(500)
-    else:
-        x = myclient.insert_one(content)
-        return render_template('index.html')
+    else :
+        return redirect(url_for('/'))
+
+
+@app.route("/index")
+def index():
+    print(session['username'])
+    return render_template('index.html')
 
 @app.route("/check_login", methods = ['POST'])
 def check():
     client = MongoClient()
     content = {
-
+        'username': request.form['username'],
+        'pass': request.form['pass']
     }
     myclient = client.vagary.users
     exists = myclient.find_one(content)
     if not exists:
         return abort(500)
     else:
-       return render_template('index.html')
+        session['username'] = request.form['username']
+        print(session['username'])
+        return redirect(url_for('index'))
     
 
 @app.route("/login")
@@ -55,10 +79,11 @@ def login():
 @app.route("/home", methods = ['POST'])
 def home():
     content = request.get_json()
-    client = MongoClient()
-    recommend_data = client.vagary.purchaseOrders[content.username]
-    # predicted_place = model.predict(recommend_data)
-    return predicted_place, 200
+    # print(content)
+    # Find travel history in mongodb
+    # Find similar places by cluster
+    # Return similar places as JSON strings
+    return str("sup")
 
 @app.route('/search', methods = ['GET','POST'])
 def search():
