@@ -4,10 +4,8 @@ var obj = {
 
     getPlaces : function() {
         $.ajax({
-            type: "POST",
-            contentType: 'application/json',
-            data: JSON.stringify({"name" : "ishaan"}),
-            url: '/home',
+            type: "GET",
+            url: '/recommend',
             success: function(data) {
                 console.log(data)
             },
@@ -18,4 +16,4 @@ var obj = {
     }
 }
 
-obj.getPlaces();
+// obj.getPlaces();

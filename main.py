@@ -1,7 +1,7 @@
 from flask import Flask, render_template, jsonify, request, abort, session, redirect, url_for
 import json
 from pymongo import MongoClient
-from util import findplaces
+from util import findplaces, return_recommended
 from flask_cors import CORS
 from flask_login import LoginManager, UserMixin
 
@@ -44,16 +44,12 @@ def register():
         else:
             x = myclient.insert_one(content)
             session['username'] = request.form['username']
-            return redirect(url_for('index'))
+            return redirect(url_for('home'))
     
     else :
         return redirect(url_for('/'))
 
 
-@app.route("/index")
-def index():
-    print(session['username'])
-    return render_template('index.html')
 
 @app.route("/check_login", methods = ['POST'])
 def check():
@@ -69,21 +65,25 @@ def check():
     else:
         session['username'] = request.form['username']
         print(session['username'])
-        return redirect(url_for('index'))
+        return redirect(url_for('home'))
     
 
 @app.route("/login")
 def login():
     return render_template("login.html")
 
-@app.route("/home", methods = ['POST'])
+@app.route("/home")
 def home():
-    content = request.get_json()
-    # print(content)
-    # Find travel history in mongodb
-    # Find similar places by cluster
-    # Return similar places as JSON strings
-    return str("sup")
+    return render_template('index.html')
+
+@app.route("/recommend", methods = ['GET'])
+def recommend():
+    client = MongoClient()
+    content = client.vagary.users.find_one({"username": session['username']})
+    travels = content['travels']
+
+    data = return_recommended(travels)
+    return jsonify(data)
 
 @app.route('/search', methods = ['GET','POST'])
 def search():
