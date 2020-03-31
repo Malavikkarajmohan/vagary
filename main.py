@@ -132,5 +132,12 @@ def results():
     print(type(data))
     return str(data)
 
+@app.route("/book_success", methods = ["POST"])
+def book_now():
+    content = request.get_json()
+    client = MongoClient()
+    content = client.vagary.users.update_one({"username": session['username']}, {'$push' : {"travels": content['place']}})
+    return render_template('success.html')
+
 if(__name__ == "__main__"):
     app.run(debug=True)
