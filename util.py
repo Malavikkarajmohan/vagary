@@ -16,15 +16,21 @@ def return_recommended(travels):
 
     client = MongoClient()
     countries = client.vagary.clustered
+    # print(travels)
     clusters = list()
     for i in travels:
+        print(i)
         found = countries.find_one({"countries": i})
         clusters.append(found['cluster'])
-
+        # print(found)
+    # print(clusters)
     places = list()
     for i in clusters:
         found = countries.find({"cluster": i})
         for doc in found:
             places.append(doc['countries'])
-    
-    return jsonify({"recommend": places})
+    s = ";"
+    places = s.join(places)
+    recommended = {"recommend" : places}
+    # print(recommended)
+    return recommended
