@@ -50,6 +50,10 @@ def register():
         return redirect(url_for('/'))
 
 
+@app.route("/book", methods = ['GET'])
+def book():
+    return render_template("booking.html")
+
 
 @app.route("/check_login", methods = ['POST'])
 def check():

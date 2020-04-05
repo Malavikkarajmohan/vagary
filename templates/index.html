@@ -29,80 +29,8 @@
     <!-- style CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
 
-    <script>
-        var obj = {
-
-            xhr: new XMLHttpRequest(),
-            showDetails : function(){
-                // need to get the recommended string
-                places = .split(";");
-
-                // first place
-                var place1= document.getElementById("place1");
-                var img1 =document.createElement("img");
-                img1 = places[0];
-                // get the url from the db
-                img1.src=URL.createObjectURL(this.response);
-
-                place1.appendChild(img1)
-                // get country's name 
-                var ht1 = document.createElement("h3");
-                // assign country's name to ht1
-                ht1 = 
-                var d1 = document.getElementById("d1");
-                d1.appendChild(ht1);
-
-
-                // second place
-                var place2= document.getElementById("place2");
-                var img2 =document.createElement("img");
-                img2 = places[1];
-                // get the url from the db
-                img2.src=URL.createObjectURL(this.response);
-                place2.appendChild(img3)
-                // get country's name 
-                var ht2 = document.createElement("h3");
-                // assign country's name to ht2
-                ht2 = 
-                var d2 = document.getElementById("d2");
-                d2.appendChild(ht2);
-
-                // Third place
-                var place3= document.getElementById("place3");
-                var img3 =document.createElement("img");
-                img3 = places[2];
-                // get the url from the db
-                img3.src=URL.createObjectURL(this.response);
-                place3.appendChild(img3)
-                // get country's name 
-                var ht3 = document.createElement("h3");
-                // assign country's name to ht3
-                ht3 = 
-                var d3= document.getElementById("d3");
-                d3.appendChild(ht3);
-
-
-                var place4= document.getElementById("place4");
-                var img4 =document.createElement("img");
-                img4 = places[3];
-                // get the url from the db
-                img4.src=URL.createObjectURL(this.response);
-                place4.appendChild(img4)
-                // get country's name 
-                var ht4 = document.createElement("h3");
-                // assign country's name to ht4
-                ht4 = 
-                var d4= document.getElementById("d4");
-                d4.appendChild(ht4);
-
-                return;
-
-            }
-
-        }
-    </script>
 </head>
-<body onload = "obj.getPlaces()">
+<body onload = "obj.showDetails()">
    <!--::header part start::-->
    <header class="main_menu">
         <div class="sub_menu">
