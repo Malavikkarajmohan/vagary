@@ -30,6 +30,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/slick.css')}}">
     <!-- style CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+
+<script>
+    var obj = {
+
+        xhr: new XMLHttpRequest(),
+
+        processData = function(){
+            // get hotel 
+            var form = document.getElementById("form");
+            
+        }
+   
+    }
+   
+
+</script>
 </head>
 <body>
    <!--::header part start::-->
@@ -121,11 +137,11 @@
         <div class="w3-container w3-center" id="book">
           <h3>Hotel</h3>
           <img src="{{  url_for('static', filename='img/plane.png')  }}" alt="Avatar" style="width:10%">
-            <form>
+            <form id = "form">
                 <label>Persons: <input type="tel"></label>
             </form>
-          <button class="w3-button w3-green">Accept</button>
-          <button class="w3-button w3-red">Decline</button>
+          <button class="w3-button w3-green" id = "accept">Accept</button>
+          <button class="w3-button w3-red" id = "decline">Decline</button>
         </div>
         <br>
         <br>
