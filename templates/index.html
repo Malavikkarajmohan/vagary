@@ -28,6 +28,79 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/slick.css')}}">
     <!-- style CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+
+    <script>
+        var obj = {
+
+            xhr: new XMLHttpRequest(),
+            showDetails : function(){
+                // need to get the recommended string
+                places = .split(";");
+
+                // first place
+                var place1= document.getElementById("place1");
+                var img1 =document.createElement("img");
+                img1 = places[0];
+                // get the url from the db
+                img1.src=URL.createObjectURL(this.response);
+
+                place1.appendChild(img1)
+                // get country's name 
+                var ht1 = document.createElement("h3");
+                // assign country's name to ht1
+                ht1 = 
+                var d1 = document.getElementById("d1");
+                d1.appendChild(ht1);
+
+
+                // second place
+                var place2= document.getElementById("place2");
+                var img2 =document.createElement("img");
+                img2 = places[1];
+                // get the url from the db
+                img2.src=URL.createObjectURL(this.response);
+                place2.appendChild(img3)
+                // get country's name 
+                var ht2 = document.createElement("h3");
+                // assign country's name to ht2
+                ht2 = 
+                var d2 = document.getElementById("d2");
+                d2.appendChild(ht2);
+
+                // Third place
+                var place3= document.getElementById("place3");
+                var img3 =document.createElement("img");
+                img3 = places[2];
+                // get the url from the db
+                img3.src=URL.createObjectURL(this.response);
+                place3.appendChild(img3)
+                // get country's name 
+                var ht3 = document.createElement("h3");
+                // assign country's name to ht3
+                ht3 = 
+                var d3= document.getElementById("d3");
+                d3.appendChild(ht3);
+
+
+                var place4= document.getElementById("place4");
+                var img4 =document.createElement("img");
+                img4 = places[3];
+                // get the url from the db
+                img4.src=URL.createObjectURL(this.response);
+                place4.appendChild(img4)
+                // get country's name 
+                var ht4 = document.createElement("h3");
+                // assign country's name to ht4
+                ht4 = 
+                var d4= document.getElementById("d4");
+                d4.appendChild(ht4);
+
+                return;
+
+            }
+
+        }
+    </script>
 </head>
 <body onload = "obj.getPlaces()">
    <!--::header part start::-->
@@ -146,15 +219,16 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id = "places">
                 <div class="col-lg-6 col-md-6">
-                    <div class="single_place">
-                        <img src="{{ url_for('static', filename='img/single_place_1.png')}}" alt="">
+                    <div class="single_place" id = "place1">
+
+                        <!-- <img src="{{ url_for('static', filename='img/cayman.jpg')}}" alt=""> -->
+                        <!-- <img src="{{ url_for('static', filename='img/malaysia.jpg')}}" alt=""> -->
                         <div class="hover_Text d-flex align-items-end justify-content-between">
-                            <div class="hover_text_iner">
+                            <div class="hover_text_iner" id = "d1">
                                 <a href="#" class="place_btn">travel</a>
-                                <h3>Saintmartine Iceland</h3>
-                                <p>Technaf, Bangladesh</p>
+                                <!-- <h3>Cayman Islands</h3> -->
                                 <div class="place_review">
                                     <a href="#"><i class="fas fa-star"></i></a>
                                     <a href="#"><i class="fas fa-star"></i></a>
@@ -171,13 +245,13 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <div class="single_place">
-                        <img src="{{ url_for('static', filename='img/single_place_2.png')}}" alt="">
+                    <div class="single_place" id = "place2">
+                        <!-- <img src="{{ url_for('static', filename='img/single_place_2.png')}}" alt=""> -->
                         <div class="hover_Text d-flex align-items-end justify-content-between">
-                            <div class="hover_text_iner">
+                            <div class="hover_text_iner" id = "d2">
                                 <a href="#" class="place_btn">travel</a>
-                                <h3>Saintmartine Iceland</h3>
-                                <p>Technaf, Bangladesh</p>
+                                <!-- <h3>Saintmartine Iceland</h3> -->
+                                
                                 <div class="place_review">
                                     <a href="#"><i class="fas fa-star"></i></a>
                                     <a href="#"><i class="fas fa-star"></i></a>
@@ -194,13 +268,13 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <div class="single_place">
-                        <img src="{{ url_for('static', filename='img/single_place_3.png')}}" alt="">
+                    <div class="single_place" id ="place3">
+                        <!-- <img src="{{ url_for('static', filename='img/single_place_3.png')}}" alt=""> -->
                         <div class="hover_Text d-flex align-items-end justify-content-between">
-                            <div class="hover_text_iner">
+                            <div class="hover_text_iner" id = "d3">
                                 <a href="#" class="place_btn">travel</a>
-                                <h3>Saintmartine Iceland</h3>
-                                <p>Technaf, Bangladesh</p>
+                                <!-- <h3></h3> -->
+                    
                                 <div class="place_review">
                                     <a href="#"><i class="fas fa-star"></i></a>
                                     <a href="#"><i class="fas fa-star"></i></a>
@@ -217,13 +291,12 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <div class="single_place">
-                        <img src="{{ url_for('static', filename='img/single_place_4.png')}}" alt="">
+                    <div class="single_place" id = "place4">
+                        <!-- <img src="{{ url_for('static', filename='img/single_place_4.png')}}" alt=""> -->
                         <div class="hover_Text d-flex align-items-end justify-content-between">
-                            <div class="hover_text_iner">
+                            <div class="hover_text_iner" id = "d4">
                                 <a href="#" class="place_btn">travel</a>
-                                <h3>Saintmartine Iceland</h3>
-                                <p>Technaf, Bangladesh</p>
+                                <!-- <h3>Saintmartine Iceland</h3> -->
                                 <div class="place_review">
                                     <a href="#"><i class="fas fa-star"></i></a>
                                     <a href="#"><i class="fas fa-star"></i></a>
@@ -239,6 +312,7 @@
                         </div>
                     </div>
                 </div>
+
                 <a href="#" class="btn_1 text-cnter">Discover more</a>
             </div>
         </div>
