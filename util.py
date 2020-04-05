@@ -32,5 +32,5 @@ def return_recommended(travels):
     s = ";"
     places = s.join(places)
     recommended = {"recommend" : places}
-    # print(recommended)
+    #print(recommended)
     return recommended
