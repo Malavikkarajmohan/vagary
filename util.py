@@ -24,13 +24,18 @@ def return_recommended(travels):
         clusters.append(found['cluster'])
         # print(found)
     # print(clusters)
+    c = ','
     places = list()
     for i in clusters:
         found = countries.find({"cluster": i})
         for doc in found:
-            places.append(doc['countries'])
+            places.append(c.join([doc['countries'],doc['img']]))
+            print(places)
+            break
+        break
+    # Remove breaks later
     s = ";"
     places = s.join(places)
     recommended = {"recommend" : places}
-    # print(recommended)
+    print(recommended)
     return recommended

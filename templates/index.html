@@ -28,8 +28,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/slick.css')}}">
     <!-- style CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+
 </head>
-<body onload = "obj.getPlaces()">
+<body onload = "obj.showDetails()">
    <!--::header part start::-->
    <header class="main_menu">
         <div class="sub_menu">
@@ -146,15 +147,16 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id = "places">
                 <div class="col-lg-6 col-md-6">
-                    <div class="single_place">
-                        <img src="{{ url_for('static', filename='img/single_place_1.png')}}" alt="">
+                    <div class="single_place" id = "place1">
+
+                        <!-- <img src="{{ url_for('static', filename='img/cayman.jpg')}}" alt=""> -->
+                        <!-- <img src="{{ url_for('static', filename='img/malaysia.jpg')}}" alt=""> -->
                         <div class="hover_Text d-flex align-items-end justify-content-between">
-                            <div class="hover_text_iner">
+                            <div class="hover_text_iner" id = "d1">
                                 <a href="#" class="place_btn">travel</a>
-                                <h3>Saintmartine Iceland</h3>
-                                <p>Technaf, Bangladesh</p>
+                                <!-- <h3>Cayman Islands</h3> -->
                                 <div class="place_review">
                                     <a href="#"><i class="fas fa-star"></i></a>
                                     <a href="#"><i class="fas fa-star"></i></a>
@@ -171,13 +173,13 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <div class="single_place">
-                        <img src="{{ url_for('static', filename='img/single_place_2.png')}}" alt="">
+                    <div class="single_place" id = "place2">
+                        <!-- <img src="{{ url_for('static', filename='img/single_place_2.png')}}" alt=""> -->
                         <div class="hover_Text d-flex align-items-end justify-content-between">
-                            <div class="hover_text_iner">
+                            <div class="hover_text_iner" id = "d2">
                                 <a href="#" class="place_btn">travel</a>
-                                <h3>Saintmartine Iceland</h3>
-                                <p>Technaf, Bangladesh</p>
+                                <!-- <h3>Saintmartine Iceland</h3> -->
+                                
                                 <div class="place_review">
                                     <a href="#"><i class="fas fa-star"></i></a>
                                     <a href="#"><i class="fas fa-star"></i></a>
@@ -194,13 +196,13 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <div class="single_place">
-                        <img src="{{ url_for('static', filename='img/single_place_3.png')}}" alt="">
+                    <div class="single_place" id ="place3">
+                        <!-- <img src="{{ url_for('static', filename='img/single_place_3.png')}}" alt=""> -->
                         <div class="hover_Text d-flex align-items-end justify-content-between">
-                            <div class="hover_text_iner">
+                            <div class="hover_text_iner" id = "d3">
                                 <a href="#" class="place_btn">travel</a>
-                                <h3>Saintmartine Iceland</h3>
-                                <p>Technaf, Bangladesh</p>
+                                <!-- <h3></h3> -->
+                    
                                 <div class="place_review">
                                     <a href="#"><i class="fas fa-star"></i></a>
                                     <a href="#"><i class="fas fa-star"></i></a>
@@ -217,13 +219,12 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <div class="single_place">
-                        <img src="{{ url_for('static', filename='img/single_place_4.png')}}" alt="">
+                    <div class="single_place" id = "place4">
+                        <!-- <img src="{{ url_for('static', filename='img/single_place_4.png')}}" alt=""> -->
                         <div class="hover_Text d-flex align-items-end justify-content-between">
-                            <div class="hover_text_iner">
+                            <div class="hover_text_iner" id = "d4">
                                 <a href="#" class="place_btn">travel</a>
-                                <h3>Saintmartine Iceland</h3>
-                                <p>Technaf, Bangladesh</p>
+                                <!-- <h3>Saintmartine Iceland</h3> -->
                                 <div class="place_review">
                                     <a href="#"><i class="fas fa-star"></i></a>
                                     <a href="#"><i class="fas fa-star"></i></a>
@@ -239,6 +240,7 @@
                         </div>
                     </div>
                 </div>
+
                 <a href="#" class="btn_1 text-cnter">Discover more</a>
             </div>
         </div>

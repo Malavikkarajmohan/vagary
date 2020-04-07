@@ -50,6 +50,10 @@ def register():
         return redirect(url_for('/'))
 
 
+@app.route("/book", methods = ['GET'])
+def book():
+    return render_template("booking.html")
+
 
 @app.route("/check_login", methods = ['POST'])
 def check():
@@ -81,9 +85,12 @@ def recommend():
     client = MongoClient()
     content = client.vagary.users.find_one({"username": session['username']})
     travels = content['travels']
-    # print(travels)
+    #print(travels)
     data = return_recommended(travels)
+    print (data)
     return jsonify(data)
+
+
 
 @app.route('/search', methods = ['GET','POST'])
 def search():
