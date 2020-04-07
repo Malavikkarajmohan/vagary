@@ -1,0 +1,4 @@
+address,category,id,lat,lng,location,name,originalId,polarity,subCategory,details,reviews
+Paral.lel 64,accommodation,131624,41.37498,2.169259,Barcelona,Autohogar Hotel Barcelona,4bd1b0725e0cce72d2d6a184,0,Hotel,http://tour-pedia.org/api/getPlaceDetails?id=131624,http://tour-pedia.org/api/getReviewsByPlaceId?placeId=131624
+Ribes 71,accommodation,131842,41.4486599,2.1896695,Barcelona,Best Western Hotel del Teatre Auditori Barcelona,4bd858252ecdce72a7bad0f2,0,Hotel,http://tour-pedia.org/api/getPlaceDetails?id=131842,http://tour-pedia.org/api/getReviewsByPlaceId?placeId=131842
+Ronda de Sant Pau 55-57,accommodation,132799,41.3772512854,2.1643579403,Barcelona,Paraiso Travellers Hostel,4c06aa658b4520a16bc28597,0,Hostel,http://tour-pedia.org/api/getPlaceDetails?id=132799,http://tour-pedia.org/api/getReviewsByPlaceId?placeId=132799

@@ -1,0 +1,4 @@
+address,category,id,lat,lng,location,name,originalId,polarity,subCategory,details,reviews
+116 Piccadilly,accommodation,35081,51.5046020122,-0.14752233,London,The Athenaeum‬‪‬‪‬ Hotel,4ac51183f964a52045a020e3,0,Hotel,http://tour-pedia.org/api/getPlaceDetails?id=35081,http://tour-pedia.org/api/getReviewsByPlaceId?placeId=35081
+47 Lillie Rd,accommodation,35092,51.4859007373,-0.1992979646,London,Ibis Hotel,4ac518b4f964a52075a020e3,0,Hotel,http://tour-pedia.org/api/getPlaceDetails?id=35092,http://tour-pedia.org/api/getReviewsByPlaceId?placeId=35092
+1 Shortlands,accommodation,35093,51.4921382252,-0.2206046272,London,Novotel,4ac518b4f964a52076a020e3,0,Hotel,http://tour-pedia.org/api/getPlaceDetails?id=35093,http://tour-pedia.org/api/getReviewsByPlaceId?placeId=35093

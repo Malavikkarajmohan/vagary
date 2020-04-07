@@ -5,6 +5,7 @@ from util import findplaces, return_recommended
 from flask_cors import CORS
 from flask_login import LoginManager, UserMixin
 
+
 # from recommend_attractions import model
 
 app = Flask(__name__)
@@ -13,7 +14,6 @@ CORS(app)
 app.secret_key = 'mysecret'
 
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
-
 
 @app.route("/", methods = ['GET','POST'])
 def sign_up():
@@ -121,16 +121,19 @@ def contact():
 @app.route("/bring_searches", methods = ["POST"])
 def results():
     content = request.get_json()
+    print(content)
     client = MongoClient()
     myclient = client.vagary.places
-    found = myclient.find({"persons":content['persons']})
+    found = myclient.find({"places":content['place']})
     data = dict()
     search = 1
     for i in found:
         data[search] = i
         search +=1 
-    print(type(data))
-    return str(data)
+    for i in data:
+        del data[i]['_id']
+    #print(data)
+    return jsonify(data)
 
 @app.route("/book_success", methods = ["POST"])
 def book_now():

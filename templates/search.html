@@ -144,25 +144,45 @@
                                         <div class="form-row">
 
                                             <div class="form_colum" >
-                                                <input id="datepicker_1" placeholder="Check in date" name = "checkin">
+                                                <!-- <input id="datepicker_5" placeholder="Check in date"> -->
+                                                <label for="Checkin">Check-in date </label><br>
+                                                <input type="date" id="datepicker_1" name="Checkin" placeholder="Check in date"> 
                                             </div>
                                             <div class="form_colum">
-                                                <input id="datepicker_2" placeholder="Check in date" name = "checkout">
+                                                <!-- <input id="datepicker_6" placeholder="Check out date"> -->
+                                                <label for="Checkout">Check-out date </label><br>
+                                                <input type="date" id="datepicker_2" name="Checkout" placeholder="Check out date"> 
                                             </div>
                                             <div class="form_colum">
                                                 <select class="nc_select" id = "place">
-                                                    <option selected>Choosace place </option>
+                                                    <option selected>Choose a place </option>
                                                     <option value="1">One</option>
                                                     <option value="2">Two</option>
                                                     <option value="3">Three</option>
+                                                    <option value="Amsterdam">Amsterdam</option>
+                                                    <option value="Barcelona">Barcelona</option>
+                                                    <option value="Berlin">Berlin</option>
+                                                    <option value="Dubai">Dubai</option>
+                                                    <option value="London">London</option>
+                                                    <option value="Paris">Paris</option>
+                                                    <option value="Rome">Rome</option>
                                                 </select>
                                             </div>
                                             <div class="form_colum">
                                                 <select class="nc_select" id="persons">
-                                                    <option selected>Persone </option>
+                                                    <option selected>Persons </option>
                                                     <option value="1">One</option>
                                                     <option value="2">Two</option>
                                                     <option value="3">Three</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    
                                                 </select>
                                             </div>
                                             <input type="submit" value="Search" class="btn_1" onclick="search.query()">
@@ -242,6 +262,207 @@
         </div>
     </section>
     <!-- Header part end-->
+
+    <!-- banner part start-->
+
+
+
+    <!--top place start-->
+    <section class="top_place section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 justify-content-center" id="heading">
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6" id="image1">
+                    <div class="single_place">
+                       
+                        <div class="hover_Text d-flex align-items-end justify-content-between">
+                            <div class="hover_text_iner">
+                                <a href="#" class="place_btn">travel</a>
+                                <h3>Saintmartine Iceland</h3>
+                                <p>Technaf, Bangladesh</p>
+                                <div class="place_review">
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <span>(210 review)</span>
+                                </div>
+                            </div>
+                            <div class="details_icon text-right">
+                                <i class="ti-share"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_place">
+                        <img src="{{ url_for('static', filename='img/single_place_2.png')}}" alt="">
+                        <div class="hover_Text d-flex align-items-end justify-content-between">
+                            <div class="hover_text_iner">
+                                <a href="#" class="place_btn">travel</a>
+                                <h3>Saintmartine Iceland</h3>
+                                <p>Technaf, Bangladesh</p>
+                                <div class="place_review">
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <span>(210 review)</span>
+                                </div>
+                            </div>
+                            <div class="details_icon text-right">
+                                <i class="ti-share"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_place">
+                        <img src="{{ url_for('static', filename='img/single_place_3.png')}}" alt="">
+                        <div class="hover_Text d-flex align-items-end justify-content-between">
+                            <div class="hover_text_iner">
+                                <a href="#" class="place_btn">travel</a>
+                                <h3>Saintmartine Iceland</h3>
+                                <p>Technaf, Bangladesh</p>
+                                <div class="place_review">
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <span>(210 review)</span>
+                                </div>
+                            </div>
+                            <div class="details_icon text-right">
+                                <i class="ti-share"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_place">
+                        <img src="{{ url_for('static', filename='img/single_place_4.png')}}" alt="">
+                        <div class="hover_Text d-flex align-items-end justify-content-between">
+                            <div class="hover_text_iner">
+                                <a href="#" class="place_btn">travel</a>
+                                <h3>Saintmartine Iceland</h3>
+                                <p>Technaf, Bangladesh</p>
+                                <div class="place_review">
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <span>(210 review)</span>
+                                </div>
+                            </div>
+                            <div class="details_icon text-right">
+                                <i class="ti-share"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="btn_1 text-cnter">Discover more</a>
+            </div>
+        </div>
+    </section>
+    <!--top place end-->
+
+    <!--top place start-->
+    <section class="event_part section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="event_slider owl-carousel" >
+                        <div class="single_event_slider">
+                            <div class="row justify-content-end">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="event_slider_content">
+                                        <h5>Upcoming Event</h5>
+                                        <h2>Maldeve - Asia</h2>
+                                        <p>Waters make fish every without firmament saw had. Morning air subdue. Our. Air very one. Whales grass is fish whales winged.
+                                        </p>
+                                        <p>date: <span>12 Aug 2019</span> </p>
+                                        <p>Cost: <span>Start from $820</span> </p>
+                                        <p>Organizer: <span> Vagary Agency</span> </p>
+                                        <div class="rating">
+                                            <span>Rating:</span>
+                                            <div class="place_review">
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="btn_1">Plan Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_event_slider">
+                            <div class="row justify-content-end">
+                                <div class="ol-lg-6 col-md-6">
+                                    <div class="event_slider_content">
+                                        <h5>Upcoming Event</h5>
+                                        <h2>Maldeve - Asia</h2>
+                                        <p>Waters make fish every without firmament saw had. Morning air subdue. Our. Air very one. Whales grass is fish whales winged.
+                                        </p>
+                                        <p>date: <span>12 Aug 2019</span> </p>
+                                        <p>Cost: <span>Start from $820</span> </p>
+                                        <p>Organizer: <span> Vagary Agency</span> </p>
+                                        <div class="rating">
+                                            <span>Rating:</span>
+                                            <div class="place_review">
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="btn_1">Plan Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_event_slider">
+                            <div class="row justify-content-end">
+                                <div class="ol-lg-6 col-md-6">
+                                    <div class="event_slider_content">
+                                        <h5>Upcoming Event</h5>
+                                        <h2>Maldeve - Asia</h2>
+                                        <p>Waters make fish every without firmament saw had. Morning air subdue. Our. Air very one. Whales grass is fish whales winged.
+                                        </p>
+                                        <p>date: <span>12 Aug 2019</span> </p>
+                                        <p>Cost: <span>Start from $820</span> </p>
+                                        <p>Organizer: <span> Vagary Agency</span> </p>
+                                        <div class="rating">
+                                            <span>Rating:</span>
+                                            <div class="place_review">
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                                <a href="#"><i class="fas fa-star"></i></a>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="btn_1">Plan Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- footer part start-->
     <footer class="footer-area">
