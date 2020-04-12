@@ -1,0 +1,4 @@
+address,category,id,lat,lng,location,name,originalId,polarity,subCategory,details,reviews
+Eichendorffstr. 4,accommodation,91904,52.5300681671,13.3881357466,Berlin,Hotel Zarenhof Berlin-Mitte,4a1c85d4f964a520467b1fe3,0,Hotel,http://tour-pedia.org/api/getPlaceDetails?id=91904,http://tour-pedia.org/api/getReviewsByPlaceId?placeId=91904
+An der Urania 16-18,accommodation,91921,52.5018323436,13.3471935873,Berlin,Best Western Hotel President Berlin,4adcda6ef964a520cb4421e3,0,Hotel,http://tour-pedia.org/api/getPlaceDetails?id=91921,http://tour-pedia.org/api/getReviewsByPlaceId?placeId=91921
+Halenseestrasse 51,accommodation,91934,52.5015002489,13.2770472765,Berlin,Motel Avus,4adcda6ff964a520db4421e3,0,Hotel,http://tour-pedia.org/api/getPlaceDetails?id=91934,http://tour-pedia.org/api/getReviewsByPlaceId?placeId=91934

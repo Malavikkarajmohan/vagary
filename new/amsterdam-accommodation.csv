@@ -1,0 +1,4 @@
+address,category,id,lat,lng,location,name,originalId,polarity,subCategory,details,reviews
+Staalmeesterlaan,accommodation,31665,52.3658427892,4.842786513,Amsterdam,14hoog bij Heleen&peter,4c4dc17bfb742d7fe4df422d,0,Strip Club,http://tour-pedia.org/api/getPlaceDetails?id=31665,http://tour-pedia.org/api/getReviewsByPlaceId?placeId=31665
+Hendrikje Stoffelstraat 1,accommodation,31671,52.3630881773,4.8424416324,Amsterdam,Fasion Hotel,4d2f8f7dd902236a7e2a4be4,0,Hotel,http://tour-pedia.org/api/getPlaceDetails?id=31671,http://tour-pedia.org/api/getReviewsByPlaceId?placeId=31671
+Voorburgstraat 250,accommodation,31680,52.3489971871,4.8426260402,Amsterdam,HEM Hotel,4a27065ff964a520c58a1fe3,0,Hotel,http://tour-pedia.org/api/getPlaceDetails?id=31680,http://tour-pedia.org/api/getReviewsByPlaceId?placeId=31680
