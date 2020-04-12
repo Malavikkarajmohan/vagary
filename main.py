@@ -145,7 +145,7 @@ def book_now():
     content = request.get_json()
     print(content)
     client = MongoClient()
-    users = client.vagary.users.update_one({"username": session['username']}, {'$push' : {"travels": content['country']}})
+    users = client.vagary.users.update_one({"username": session['username']}, {'$addToSet' : {"travels": content['country']}})
     rooms = client.vagary.places.update_one({"name": content['name']}, {'$inc' : {"persons": -1}})
     return Response(200)
 
