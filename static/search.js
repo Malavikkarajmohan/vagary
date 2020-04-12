@@ -1,5 +1,3 @@
-console.log("Sane")
-
 var search = {
 
     xhr: new XMLHttpRequest(),
@@ -26,19 +24,21 @@ var search = {
             success: function(data) {
                 //console.log(data['1'].image);
                 localStorage.setItem("data",JSON.stringify(data));
-                var my_div = document.getElementById("heading");
+				var my_div = document.getElementById("heading");
+				my_div.innerHTML ="";
                 //console.log(my_div);
                 var x = document.createElement("H1");
                 var t = document.createTextNode("Hotels in "+place);
                 x.appendChild(t);
                 my_div.appendChild(x);
                 
-                var img1_div = document.getElementById("image1");
+				var img1_div = document.getElementById("image1");
                 console.log(img1_div);
                 var img1 = document.createElement('img');
                 //img.src ="img/search/dubai2.jpg" 
                 img1.src = data['1'].image;
-                img1_div.appendChild(img1);
+				img1_div.appendChild(img1);
+				// img1_div.innerHTML = img1.innerHTML;
                 var book1 = document.getElementById("d1");
                // console.log(book);
                 var h3_1 = document.createElement("H3");
@@ -47,12 +47,13 @@ var search = {
                 book1.append(h3_1);
     
 
-                var img2_div = document.getElementById("image2");
+				var img2_div = document.getElementById("image2");
                 //console.log(img_div);
                 var img2 = document.createElement('img');
                 //img.src ="img/search/dubai2.jpg" 
                 img2.src = data['2'].image;
-                img2_div.appendChild(img2);
+				img2_div.appendChild(img2);
+				// img2_div.firstElementChild = img2;
                 var book2 = document.getElementById("d2");
                // console.log(book);
                 var h3_2 = document.createElement("H3");
@@ -60,12 +61,13 @@ var search = {
                 h3_2.appendChild(txt2);
                 book2.append(h3_2);
 
-                var img3_div = document.getElementById("image3");
+				var img3_div = document.getElementById("image3");
                 //console.log(img_div);
                 var img3 = document.createElement('img');
                 //img.src ="img/search/dubai2.jpg" 
                 img3.src = data['3'].image;
-                img3_div.appendChild(img3);
+				img3_div.appendChild(img3);
+				// img3_div.innerHTML = img3.innerHTML;
                 var book3 = document.getElementById("d3");
                // console.log(book);
                 var h3_3 = document.createElement("H3");
