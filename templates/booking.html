@@ -48,15 +48,16 @@
 
 </script>
 </head>
-<body>
+<body onload = "book.begin()">
    <!--::header part start::-->
    <header class="main_menu">
         <div class="sub_menu">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-sm-12 col-md-6">
+                        
                         <div class="sub_menu_right_content">
-                            <span>Top destinations</span>
+                            <span>Top destinations</span>    
                             <a href="#">Asia</a>
                             <a href="#">Europe</a>
                             <a href="#">America</a>
@@ -137,11 +138,23 @@
 
         <div class="w3-container w3-center" id="book">
           <h3>Hotel</h3>
+          <h4 id = "name"></h4>
+          <h4 id = "avail"></h4>
           <img src="{{  url_for('static', filename='img/plane.png')  }}" alt="Avatar" style="width:10%">
             <form id = "form">
-                <label>Persons: <input type="tel"></label>
+                <div class="form_colum" >
+                     <!-- <input id="datepicker_5" placeholder="Check in date"> --> 
+                    <label for="Checkin">Check-in date</label>
+                    <input type="date" id="datepicker_1" name="Checkin" placeholder="Check in date">
+                </div>
+                <div class="form_colum">
+                    <!-- <input id="datepicker_6" placeholder="Check out date"> -->
+                    <label for="Checkout">Check-out date </label>
+                    <input type="date" id="datepicker_2" name="Checkout" placeholder="Check out date"><br>
+                </div>
+                <label>Rooms: <input type="text" id = "per"></label>
             </form>
-          <button class="w3-button w3-green" id = "accept">Accept</button>
+          <button class="w3-button w3-green" id = "accept" onclick = "book.booking()">Accept</button>
           <button class="w3-button w3-red" id = "decline">Decline</button>
         </div>
         <br>
@@ -252,6 +265,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- custom js -->
     <script src="{{ url_for('static', filename='custom.js')}}"></script>
     <script src="{{ url_for('static', filename='top-places.js')}}"></script>
+    <script src="{{ url_for('static', filename='search.js')}}"></script>
+    <script src="{{ url_for('static', filename='booking.js')}}"></script>
 </body>
 
 </html>
