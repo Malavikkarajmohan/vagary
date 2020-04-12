@@ -29,9 +29,107 @@
     <!-- style CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
 
+
+    <script>
+    var obj = {
+        xhr: new XMLHttpRequest(),	
+         init: function(){
+			if(this.xhr)
+			{
+				this.xhr.onreadystatechange = this.getContent;
+                this.xhr.open("GET", "../content.txt", true);
+				this.xhr.send(null);
+			}	
+		},
+
+        getContent: function(){
+		if(this.xhr.readyState=="4"&&this.xhr.status==200){
+                // get the response text and split it 
+                var arr=(xhr.responseText).split(";");
+                // will have to change the assigenments
+				document.getElementById("logo").innerHTML= arr[3];;
+                document.getElementById("hotel1").innerHTML=arr[3];
+				document.getElementById("hotel2").innerHTML=arr[3];
+				document.getElementById("hotel3").innerHTML=arr[3];
+				setTimeout(getLogo, 4000);	
+		  }
+        },
+        
+		getLogo: function(){
+            // get the logo, can save it in a txt file, 
+            // if this doesnt work then got to store in db and make call
+            // check if this is the way to open a file 
+			this.xhr.open("GET", "../img/logo.txt", true);
+			this.xhr.onreadystatechange = this.showLogo;
+			this.xhr.send(null);
+		
+		},
+		showLogo: function()
+		{
+			if(this.xhr.readyState == 4 && this.xhr.status == 200)
+			{
+                // idk how to write the stuff after the "=" with mongo 
+				document.getElementById("logo").innerHTML = this.xhr.responseText;	
+			}
+			setTimeout(getHotel1,2000);
+			
+        },
+        
+        getHotel1: function(){
+            // if this doesnt work then got to store in db and make call
+			this.xhr.open("GET", "static/img/hotel1.txt", true);
+			this.xhr.onreadystatechange = this.showHotel1;
+			this.xhr.send(null);
+		
+		},
+		showHotel1: function()
+		{
+			if(this.xhr.readyState == 4 && this.xhr.status == 200)
+			{
+                // idk if the stuff after the "=" is same with mongo 
+				document.getElementById("hotel1").innerHTML = this.xhr.responseText;	
+			}
+			setTimeout(getHotel2,2000);
+			
+        },
+        
+        getHotel2: function(){
+            // if this doesnt work then got to store in db and make call
+			this.xhr.open("GET", "static/img/hotel2.txt", true);
+			this.xhr.onreadystatechange = this.showHotel2;
+			this.xhr.send(null);
+		
+		},
+		showHotel2: function()
+		{
+			if(this.xhr.readyState == 4 && this.xhr.status == 200)
+			{
+                // idk if the stuff after the "=" is same with mongo 
+				document.getElementById("hotel2").innerHTML = this.xhr.responseText;	
+			}
+			setTimeout(getHotel3,2000);
+			
+        },
+        getHotel3: function(){
+            // if this doesnt work then got to store in db and make call
+			this.xhr.open("GET", "static/img/hotel3.txt", true);
+			this.xhr.onreadystatechange = this.showHotel3;
+			this.xhr.send(null);
+		
+		},
+		showHotel3: function()
+		{
+			if(this.xhr.readyState == 4 && this.xhr.status == 200)
+			{
+                // idk if the stuff after the "=" is same with mongo 
+				document.getElementById("hotel3").innerHTML = this.xhr.responseText;	
+			}	
+		}
+    }
+    </script>
 </head>
-<body onload = "obj.showDetails()">
-   <!--::header part start::-->
+<body onload = "obj.init()" onload = "obj.showDetails()">
+   <!--:header part start::-->
    <header class="main_menu">
         <div class="sub_menu">
             <div class="container">
@@ -61,7 +159,10 @@
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                            <a class="navbar-brand" href="{{ url_for('home') }}"> <img src="{{ url_for('static', filename='img/plane.png')}}" alt="logo"> </a>
+                            <a class="navbar-brand" href="{{ url_for('home') }}"> 
+                                <div id = "logo">
+                                <img src="{{ url_for('static', filename='img/plane.png')}}" alt="logo"> </a>
+                                </div>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -153,7 +254,7 @@
 
                         <!-- <img src="{{ url_for('static', filename='img/cayman.jpg')}}" alt=""> -->
                         <!-- <img src="{{ url_for('static', filename='img/malaysia.jpg')}}" alt=""> -->
-                        <div class="hover_Text d-flex align-items-end justify-content-between">
+                        <div class="hover_Text d-flex align-items-end ju8stify-content-between">
                             <div class="hover_text_iner" id = "d1">
                                 <a href="#" class="place_btn">travel</a>
                                 <!-- <h3>Cayman Islands</h3> -->
@@ -351,8 +452,8 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-sm-6">
-                    <div class="single_ihotel_list">
-                        <img src="{{ url_for('static', filename='img/ind/industries_1.png')}}" alt="">
+                    <div class="single_ihotel_list" id = "hotel1">
+                        <!-- <img src="{{ url_for('static', filename='img/ind/industries_1.png')}}" alt=""> -->
                         <div class="hover_text">
                             <div class="hotel_social_icon">
                                 <ul>
@@ -381,8 +482,8 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <div class="single_ihotel_list">
-                        <img src="{{ url_for('static', filename='img/ind/industries_2.png')}}" alt="">
+                    <div class="single_ihotel_list" id = "hotel2">
+                        <!-- <img src="{{ url_for('static', filename='img/ind/industries_2.png')}}" alt=""> -->
                         <div class="hover_text">
                             <div class="hotel_social_icon">
                                 <ul>
@@ -411,8 +512,8 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <div class="single_ihotel_list">
-                        <img src="{{ url_for('static', filename='img/ind/industries_3.png')}}" alt="">
+                    <div class="single_ihotel_list" id = "hotel3">
+                        <!-- <img src="{{ url_for('static', filename='img/ind/industries_3.png')}}" alt=""> -->
                         <div class="hover_text">
                             <div class="hover_text">
                                 <div class="hotel_social_icon">
