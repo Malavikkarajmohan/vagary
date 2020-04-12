@@ -1,0 +1,40 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title>Contact Support</title>
+    <script src="{{ url_for('static', filename='chat.js')}}"></script>
+  </head>
+  <body>
+
+    
+    <div class="message_holder" id = "box">
+        <h3 style='color: #ccc;font-size: 30px;' id = "nomessage">No message yet..</h3>
+    </div>
+    <input type="text" id="message" placeholder="Messages"/>
+    <input type="submit" onclick="chat.sent()"/>
+
+  </body>
+  <script src="{{ url_for('static', filename='jquery-1.12.1.min.js')}}"></script>
+  <!-- popper js -->
+  <script src="{{ url_for('static', filename='popper.min.js')}}"></script>
+  <!-- bootstrap js -->
+  <script src="{{ url_for('static', filename='bootstrap.min.js')}}"></script>
+  <!-- magnific js -->
+  <script src="{{ url_for('static', filename='jquery.magnific-popup.js')}}"></script>
+  <!-- swiper js -->
+  <script src="{{ url_for('static', filename='owl.carousel.min.js')}}"></script>
+  <!-- masonry js -->
+  <script src="{{ url_for('static', filename='masonry.pkgd.js')}}"></script>
+  <!-- masonry js -->
+  <script src="{{ url_for('static', filename='jquery.nice-select.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='gijgo.min.js')}}"></script>
+  <!-- contact js -->
+  <script src="{{ url_for('static', filename='jquery.ajaxchimp.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='jquery.form.js')}}"></script>
+  <script src="{{ url_for('static', filename='jquery.validate.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='mail-script.js')}}"></script>
+  <script src="{{ url_for('static', filename='contact.js')}}"></script>
+  <!-- custom js -->
+  <script src="{{ url_for('static', filename='custom.js')}}"></script>
+  </html>

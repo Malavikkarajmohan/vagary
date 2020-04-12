@@ -1,7 +1,7 @@
 from flask import Flask, render_template, jsonify, request, abort, session, redirect, url_for, Response
 import json
 from pymongo import MongoClient
-from util import findplaces, return_recommended
+from util import findplaces, return_recommended, message
 from flask_cors import CORS
 from flask_login import LoginManager, UserMixin
 
@@ -14,6 +14,8 @@ CORS(app)
 app.secret_key = 'mysecret'
 
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+
+length_file = 0
 
 @app.route("/", methods = ['GET','POST'])
 def sign_up():
@@ -152,6 +154,10 @@ def book_now():
 @app.route("/success")
 def success():
     return render_template('success.html')
+
+@app.route("/chat")
+def chat():
+    return render_template('chat.html')
 
 if(__name__ == "__main__"):
     app.run(debug=True)
