@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request, abort, session, redirect, url_for
+from flask import Flask, render_template, jsonify, request, abort, session, redirect, url_for, Response
 import json
 from pymongo import MongoClient
 from util import findplaces, return_recommended
@@ -143,8 +143,14 @@ def results():
 @app.route("/book_success", methods = ["POST"])
 def book_now():
     content = request.get_json()
+    print(content)
     client = MongoClient()
-    content = client.vagary.users.update_one({"username": session['username']}, {'$push' : {"travels": content['place']}})
+    users = client.vagary.users.update_one({"username": session['username']}, {'$push' : {"travels": content['country']}})
+    rooms = client.vagary.places.update_one({"name": content['name']}, {'$inc' : {"persons": -1}})
+    return Response(200)
+
+@app.route("/success")
+def success():
     return render_template('success.html')
 
 if(__name__ == "__main__"):
