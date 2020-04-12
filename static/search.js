@@ -14,7 +14,7 @@ var search = {
         //console.log(place);
         //var person = document.getElementById("persons").value; 
         var text = '{ "place":' + place_txt + ' }';
-        localStorage.setItem("text",text);
+        localStorage.setItem("place", place);
         //console.log(text)
         $.ajax({
             type: "POST",

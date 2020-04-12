@@ -8,7 +8,7 @@ var book = {
     },
 
     begin: function(){
-        var place = localStorage.getItem("text");
+        
         //var h3_1 = localStorage.getItem("h3_1");
         btn  = localStorage.getItem("btnValue");
         //data  = localStorage.getItem("data");
@@ -16,6 +16,7 @@ var book = {
         // console.log(text);
         // console.log(btn);
         // console.log(data);
+
         if(btn == "btn1")
         {
             name = data['1'].name;
@@ -51,19 +52,27 @@ var book = {
     booking: function()
     {
         var rooms = document.getElementById("per").value;
+        var place = localStorage.getItem("place");
         console.log(rooms);
-        var text = '{ "name": ' + name + ' "persons:" '+ rooms +' }' ;
+        var text = { 
+            name : name, 
+            persons : rooms,
+            country : place
+        };
         console.log(text);
         $.ajax({
             type: "POST",
             contentType: 'application/json',
-            data: text,
+            data: JSON.stringify(text),
             url: '/book_success',
+            success: function() {
             
-                
-                //console.log(data);
-                
+                window.location.href = "/success";
+
             }
+                
+                
+        }
     );
     }
 }
