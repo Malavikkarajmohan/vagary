@@ -66,12 +66,11 @@ var book = {
             data: JSON.stringify(text),
             url: '/book_success',
             success: function() {
-            
                 window.location.href = "/success";
-
-            }
-                
-                
+            },
+            error: function() {
+                alert("Please try again!");
+            }   
         }
     );
     }
