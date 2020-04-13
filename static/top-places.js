@@ -67,8 +67,8 @@ var showdets = {
                             var place3= document.getElementById("place3");
                             var img3 =document.createElement("img");
                             // get the url from the db
-                            // img3.src = places[2].split(",")[1];
-                            img3.src = places[0].split(",")[1];
+                            img3.src = places[2].split(",")[1];
+                            // img3.src = places[0].split(",")[1];
                             img3.style.height = '400px';
                             place3.appendChild(img3)
                             // // get country's name 
@@ -79,19 +79,19 @@ var showdets = {
                             d3.appendChild(ht3);
 
                             setTimeout(function() {
-                                // var place4= document.getElementById("place4");
-                                // var img4 =document.createElement("img");
+                                var place4= document.getElementById("place4");
+                                var img4 =document.createElement("img");
                                 // // get the url from the db
-                                // // img4.src = places[3].split(",")[1];
+                                img4.src = places[3].split(",")[1];
                                 // img2.src = places[0].split(",")[1];
 
-                                // place4.appendChild(img4)
+                                place4.appendChild(img4)
                                 // // // get country's name 
-                                // var ht4 = document.createElement("h3");
+                                var ht4 = document.createElement("h3");
                                 // // assign country's name to ht4
-                                // ht4.innerHTML = places[3].split(",")[0];
-                                // var d4 = document.getElementById("d4");
-                                // d4.appendChild(ht4);
+                                ht4.innerHTML = places[3].split(",")[0];
+                                var d4 = document.getElementById("d4");
+                                d4.appendChild(ht4);
                             }, 2000)
                         
                         }, 2000);

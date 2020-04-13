@@ -1,1 +1,1 @@
-{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"vagary.places"}],"uuid":"e61f57ca714743e88e029ba64f565c8e"}
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"vagary.places"}],"uuid":"7badfe0c6b604805a89528595a8aa6fc"}
