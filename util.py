@@ -26,10 +26,12 @@ def return_recommended(travels):
     # print(clusters)
     c = ','
     places = list()
+
     for i in clusters:
         found = countries.find({"cluster": i})
         for doc in found:
             places.append(c.join([doc['countries'],doc['img']]))
+
     
     print(places)
             
