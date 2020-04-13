@@ -15,6 +15,8 @@ app.secret_key = 'mysecret'
 
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
+length_file = 0
+
 @app.route("/", methods = ['GET','POST'])
 def sign_up():
     return render_template("sign_up.html")
@@ -145,13 +147,39 @@ def book_now():
     content = request.get_json()
     print(content)
     client = MongoClient()
-    users = client.vagary.users.update_one({"username": session['username']}, {'$push' : {"travels": content['country']}})
+    users = client.vagary.users.update_one({"username": session['username']}, {'$addToSet' : {"travels": content['country']}})
     rooms = client.vagary.places.update_one({"name": content['name']}, {'$inc' : {"persons": -1}})
     return Response(200)
 
 @app.route("/success")
 def success():
     return render_template('success.html')
+
+@app.route("/chat")
+def chat():
+    return render_template('chat.html')
+
+@app.route("/autocomplete", methods = ['POST'])
+def suggest():
+    content = request.get_json()
+    client = MongoClient()
+    query = {
+        "places": {
+            "$regex": content['search'] + ".*"
+        }
+    }
+    places = client.vagary.places.find(query)
+
+    res = list()
+
+    for doc in places:
+        res.append(doc['places'])
+
+    res = list(set(res))
+
+    print(";".join(res))
+
+    return {"places": res}
 
 if(__name__ == "__main__"):
     app.run(debug=True)
