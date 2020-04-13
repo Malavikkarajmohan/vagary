@@ -15,7 +15,6 @@
 //         });
 //     }
 // }
-console.log(places)
 var showdets = {
 
     xhr: new XMLHttpRequest(),
