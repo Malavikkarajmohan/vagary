@@ -1,7 +1,7 @@
 from flask import Flask, render_template, jsonify, request, abort, session, redirect, url_for, Response
 import json
 from pymongo import MongoClient
-from util import findplaces, return_recommended, message
+from util import findplaces, return_recommended
 from flask_cors import CORS
 from flask_login import LoginManager, UserMixin
 
@@ -158,6 +158,28 @@ def success():
 @app.route("/chat")
 def chat():
     return render_template('chat.html')
+
+@app.route("/autocomplete", methods = ['POST'])
+def suggest():
+    content = request.get_json()
+    client = MongoClient()
+    query = {
+        "places": {
+            "$regex": content['search'] + ".*"
+        }
+    }
+    places = client.vagary.places.find(query)
+
+    res = list()
+
+    for doc in places:
+        res.append(doc['places'])
+
+    res = list(set(res))
+
+    print(";".join(res))
+
+    return {"places": res}
 
 if(__name__ == "__main__"):
     app.run(debug=True)
