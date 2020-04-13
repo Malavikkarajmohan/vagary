@@ -43,90 +43,47 @@
 <body>
     <!--::header part start::-->
     <header class="main_menu">
-            <div class="sub_menu">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-sm-12 col-md-6">
-                            <div class="sub_menu_right_content">
-                                <span>Top destinations</span>
-                                <a href="#">Asia</a>
-                                <a href="#">Europe</a>
-                                <a href="#">America</a>
-                            </div>
+        <div class="sub_menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12 col-md-6">
+                        <div class="sub_menu_right_content">
+                            <span>Top destinations</span>
+                            <a href="https://www.google.com/search?sxsrf=ALeKk02S0MrBfM-CwczFl6tFrGMmSUon0A%3A1586767391831&ei=HyaUXp6oMuSD4-EPh5K6wAM&q=top+places+to+visit+in+asia&oq=top+places+to+visit+in+asia&gs_lcp=CgZwc3ktYWIQAzIECAAQQzICCAAyAggAMgQIABAeMgQIABAeMgQIABAeMgQIABAeMgQIABAeMgQIABAeMgQIABAeOgQIABBHSgkIFxIFMTItNTdKCAgYEgQxMi0zUORBWORBYPJEaABwAngAgAF4iAF4kgEDMC4xmAEAoAEBqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwjes-yVgeXoAhXkwTgGHQeJDjgQ4dUDCAw&uact=5">Asia</a>
+                            <a href="https://www.google.com/search?q=top+places+to+visit+in+europe&oq=top+places+to+visit+in+europ&aqs=chrome.0.0j69i57j0l6.3995j0j7&sourceid=chrome&ie=UTF-8">Europe</a>
+                            <a href="https://www.google.com/search?sxsrf=ALeKk03lrxhiwUlNQhN5k10Uk8l1dYtBnw%3A1586767508999&ei=lCaUXsfCPOGb4-EPoLe6kAg&q=top+places+to+visit+in+america&oq=top+places+to+visit+in+america&gs_lcp=CgZwc3ktYWIQAzICCAAyAggAMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjoECAAQRzoECCMQJzoICAAQFhAKEB5KCggXEgYxMi0xMDNKCQgYEgUxMi0xMFCXCVi0GGCzIWgDcAJ4AIAB2gGIAfcGkgEFNC4zLjGYAQCgAQGqAQdnd3Mtd2l6&sclient=psy-ab&ved=0ahUKEwjH3NvNgeXoAhXhzTgGHaCbDoIQ4dUDCAw&uact=5">America</a>
                         </div>
-                        <div class="col-lg-6 col-sm-12 col-md-6">
-                            <div class="sub_menu_social_icon">
-                                <a href="#"><i class="flaticon-facebook"></i></a>
-                                <a href="#"><i class="flaticon-twitter"></i></a>
-                                <a href="#"><i class="flaticon-skype"></i></a>
-                                <a href="#"><i class="flaticon-instagram"></i></a>
-                                <span><i class="flaticon-phone-call"></i>+880 356 257 142</a></span>
-                            </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 col-md-6">
+                        <div class="sub_menu_social_icon">
+                            <a href="https://www.facebook.com/"><i class="flaticon-facebook"></i></a>
+                            <a href="https://twitter.com/Twitter?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="flaticon-twitter"></i></a>
+                            <a href="https://www.skype.com/en/features/skype-web/"><i class="flaticon-skype"></i></a>
+                            <a href="https://www.instagram.com/"><i class="flaticon-instagram"></i></a>
+                            <span><i class="flaticon-phone-call"></i>+880 356 257 142</a></span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="main_menu_iner">
-                <div class="container">
-                    <div class="row align-items-center ">
-                        <div class="col-lg-12">
-                            <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                            <a class="navbar-brand" href="{{ url_for('home') }}"> <img src="{{ url_for('static', filename='img/plane.png')}}" alt="logo"> </a>
+        </div>
+        <div class="main_menu_iner">
+            <div class="container">
+                <div class="row align-items-center ">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+                       
+                        <a class="navbar-brand" href="{{ url_for('home') }}">  <img src="{{ url_for('static', filename='img/plane.png')}}" alt="logo"> </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
 
-                                <!-- <a class="navbar-brand" href=" /home "> <img src="img/logo.png" alt="logo"> </a> -->
-                                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                    aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-
-                                <div class="collapse navbar-collapse main-menu-item justify-content-center"
-                                    id="navbarSupportedContent">
-                                    <ul class="navbar-nav">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="/home ">Home</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="   /about ">About</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="   /packages ">packages</a>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <!-- <a class="nav-link dropdown-toggle" href="   /blog " id="navbarDropdown"
-                                                role="button" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                                Blog
-                                            </a> -->
-                                            <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="   /blog ">Blog</a>
-                                                <a class="dropdown-item" href="   /single-blog ">Single blog</a>
-                                            </div> -->
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="   /blog " id="navbarDropdown_1"
-                                                role="button" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                                pages
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                                <a class="dropdown-item" href="   /top_place ">top place</a>
-                                                <a class="dropdown-item" href="   /tour_details ">tour details</a>
-                                                <!-- <a class="dropdown-item" href="elements ">Elements</a> -->
-                                            </div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="   /contact ">Contact</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="btn_1 d-none d-lg-block">book now</a>
-                            </nav>
-                        </div>
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
         <!-- Header part end-->
 
     <!-- breadcrumb start-->
@@ -403,10 +360,10 @@
                                 +880 362 352 783</p>
                         <span>contact@martine.com</span>
                         <div class="social-icons">
-                            <a href="#"><i class="ti-facebook"></i></a>
-                            <a href="#"><i class="ti-twitter-alt"></i></a>
-                            <a href="#"><i class="ti-pinterest"></i></a>
-                            <a href="#"><i class="ti-instagram"></i></a>
+                            <a href="https://www.facebook.com/"><i class="flaticon-facebook"></i></a>
+                            <a href="https://twitter.com/Twitter?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="flaticon-twitter"></i></a>
+                            <a href="https://www.skype.com/en/features/skype-web/"><i class="flaticon-skype"></i></a>
+                            <a href="https://www.instagram.com/"><i class="flaticon-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -416,9 +373,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="copyright_part_text text-center">
-                        <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                
                     </div>
                 </div>
             </div>
