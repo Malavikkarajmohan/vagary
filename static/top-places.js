@@ -15,7 +15,6 @@
 //         });
 //     }
 // }
-
 var showdets = {
 
     xhr: new XMLHttpRequest(),
@@ -83,6 +82,8 @@ var showdets = {
                                 var img4 =document.createElement("img");
                                 // // get the url from the db
                                 img4.src = places[3].split(",")[1];
+                               img4.style.height = '400px';
+
                                 // img2.src = places[0].split(",")[1];
 
                                 place4.appendChild(img4)
@@ -92,6 +93,9 @@ var showdets = {
                                 ht4.innerHTML = places[3].split(",")[0];
                                 var d4 = document.getElementById("d4");
                                 d4.appendChild(ht4);
+
+
+                                
                             }, 2000)
                         
                         }, 2000);

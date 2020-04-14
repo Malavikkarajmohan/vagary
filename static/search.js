@@ -5,7 +5,10 @@ var search = {
     showData: function(data) {
         console.log(data);
     },
-    query: function() {
+	query: function() {
+		//my_div.remove(x);
+		
+		
         //var checkin = document.getElementById("datepicker_1").value;
         //console.log(typeof checkin)
         //var checkout = document.getElementById("datepicker_2").value;
@@ -22,27 +25,29 @@ var search = {
             data: text,
             url: '/bring_searches',
             success: function(data) {
-                //console.log(data['1'].image);
+				//console.log(data['1'].image);
+				
                 localStorage.setItem("data",JSON.stringify(data));
-				var my_div = document.getElementById("heading");
+				my_div = document.getElementById("heading");
 				my_div.innerHTML ="";
                 //console.log(my_div);
-                var x = document.createElement("H1");
-                var t = document.createTextNode("Hotels in "+place);
+                x = document.createElement("H1");
+                t = document.createTextNode("Hotels in "+place);
                 x.appendChild(t);
-                my_div.appendChild(x);
+				my_div.appendChild(x);
+				
                 
-				var img1_div = document.getElementById("image1");
+				img1_div = document.getElementById("image1");
                 console.log(img1_div);
-                var img1 = document.createElement('img');
+                img1 = document.createElement('img');
                 //img.src ="img/search/dubai2.jpg" 
                 img1.src = data['1'].image;
 				img1_div.appendChild(img1);
 				// img1_div.innerHTML = img1.innerHTML;
-                var book1 = document.getElementById("d1");
+                book1 = document.getElementById("d1");
                // console.log(book);
-                var h3_1 = document.createElement("H3");
-                var txt1 = document.createTextNode(data['1'].name);
+                h3_1 = document.createElement("H3");
+                txt1 = document.createTextNode(data['1'].name);
                 h3_1.appendChild(txt1);
                 book1.append(h3_1);
     
@@ -73,8 +78,10 @@ var search = {
                 var h3_3 = document.createElement("H3");
                 var txt3 = document.createTextNode(data['3'].name);
                 h3_3.appendChild(txt3);
-                book3.append(h3_3);
-                
+				book3.append(h3_3);
+				
+				var div1 = document.getElementById("new");
+				div1.style.color = "blue";
                 //search.book(data);
             },
             error: function(error) {
