@@ -148,7 +148,7 @@ def book_now():
     print(content)
     client = MongoClient()
     users = client.vagary.users.update_one({"username": session['username']}, {'$addToSet' : {"travels": content['country']}})
-    rooms = client.vagary.places.update_one({"name": content['name']}, {'$inc' : {"persons": -1}})
+    rooms = client.vagary.places.update_one({"name": content['name']}, {'$inc' : {"persons": -int(content['persons'])}})
     return Response(200)
 
 @app.route("/success")
