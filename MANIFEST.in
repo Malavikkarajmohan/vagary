@@ -1,0 +1,3 @@
+graft vagary/static
+graft vagary/templates
+global-exclude *.pyc
