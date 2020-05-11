@@ -192,10 +192,10 @@ def create_app(test_config=True):
     @app.route("/book_success", methods = ["POST"])
     def book_now():
         content = request.get_json()
-        print(content)
-        client = MongoClient()
-        users = client.vagary.users.update_one({"username": session['username']}, {'$addToSet' : {"travels": content['country']}})
-        rooms = client.vagary.places.update_one({"name": content['name']}, {'$inc' : {"persons": -int(content['persons'])}})
+        print(int(content['persons']))
+        # client = MongoClient()
+        # users = client.vagary.users.update_one({"username": session['username']}, {'$addToSet' : {"travels": content['country']}})
+        # rooms = client.vagary.places.update_one({"name": content['name']}, {'$inc' : {"persons": -int(content['persons'])}})
         return Response(200)
 
     @app.route("/success")
